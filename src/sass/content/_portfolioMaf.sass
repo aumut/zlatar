@@ -1,0 +1,52 @@
+.content-portfolio-maf
+  .content__center
+    h2.title
+      color: $col_main
+      text-align: left
+  .content__center.scrolled
+    padding-right: 10px
+    +laptop-album-down
+      padding-right: 8px
+    +laptop-device-down
+      padding-right: 3px
+
+.img-row
+  display: grid
+  grid-template-columns: 2fr 2fr 1fr 1fr
+  grid-template-rows: minmax(286px, auto)
+  grid-gap: 10px
+  margin: 15px 0px
+
+  +laptop-album-down
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: repeat(2, minmax(auto, 240px))
+    grid-gap: 5px
+
+  +laptop-down
+    margin: 5px 0px
+
+  +phone_min-down
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: repeat(3, minmax(auto, 180px))
+
+
+.img-wrap
+  height: 100%
+  &:first-child
+    +laptop-album-down
+      order: -2
+    +phone_min-down
+      grid-column: span 2
+
+  &:nth-child(2)
+    +phone_min-down
+      order: 1
+      grid-column: span 2
+
+  &:last-child
+    +laptop-album-down
+      order: -1
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover

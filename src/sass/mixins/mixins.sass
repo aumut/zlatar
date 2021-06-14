@@ -1,0 +1,222 @@
+=clearfix
+	&::after
+		clear: both
+		content: ""
+		display: table
+
+
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+
+$desktop-width: 1920px
+$laptop-album-width: 1366px
+$laptop-width: 1024px
+$tablet-width: 768px
+$phone-width: 568px
+$phone_min-width: 320px
+$phone-height: 568px
+$phone-landscape-height: 820px
+
+$desktop-height: 1160px
+$laptop-height: 1366px
+$tablet-album-height: 768px
+$height_820: 820px
+
+
+=desktop-device
+  @media screen and (min-width: $desktop-width) and (min-height: $desktop-height)
+    @content
+
+=laptop-device-down
+	@media screen and (max-width: $laptop-width) and (max-height: $laptop-height)
+		@content
+
+=tablet-album-device-down
+	@media screen and (max-width: $laptop-width) and (max-height: $tablet-album-height)
+		@content
+
+=tablet-landscape-down
+	@media screen and (max-width: $tablet-width) and (max-height: $laptop-width)
+		@content
+
+=desktop-device-height
+	@media screen and (min-height: $laptop-album-width)
+		@content
+
+=tablet-device-height
+	@media screen and (max-height: $tablet-album-height)
+		@content
+
+=height_820
+	@media screen and (max-height: $height_820)
+		@content
+
+=height_min_820
+	@media screen and (min-height: $height_820)
+		@content
+
+=desktop
+	@media screen and (min-width: calc(#{$desktop-width} + 1px))
+		@content
+=laptop-album
+	@media screen and (min-width: $laptop-album-width)
+		@content
+=laptop
+	@media screen and (min-width: $laptop-width)
+		@content
+=tablet
+	@media screen and (min-width: $tablet-width)
+		@content
+=phone
+	@media screen and (min-width: $phone-width)
+		@content
+=phone_min
+	@media screen and (min-width: $phone_min-width)
+		@content
+
+=laptop_mob
+	@media screen and (min-width: $laptop-width) and (max-height: $phone-width)
+		@content
+
+
+=desktop-down
+	@media screen and (max-width: $desktop-width)
+		@content
+=laptop-album-down
+	@media screen and (max-width: $laptop-album-width)
+		@content
+=laptop-down
+	@media screen and (max-width: $laptop-width)
+		@content
+=tablet-down
+	@media screen and (max-width: $tablet-width), screen and (max-width: $phone-landscape-height) and (max-height: $phone-width), screen and (max-height: $phone-width)
+		@content
+=phone-down
+	@media screen and (max-width: $phone-width), screen and (max-width: $phone-landscape-height) and (max-height: $phone-width), screen and (max-height: $phone-width), screen and (max-width: $tablet-width) and (max-height: $tablet-width)
+		@content
+=phone_min-down
+	@media screen and (max-width: $phone_min-width)
+		@content
+=phone-landscape-down
+	@media screen and (max-width: $phone-width) and (orientation: landscape), screen and (max-width: $phone-landscape-height) and (orientation: landscape)
+		@content
+=laptop-landscape-down
+	@media screen and (max-width: $laptop-width) and (orientation: landscape)
+		@content
+=phone-height-down
+  @media screen and (max-height: $phone-width)
+    @content
+=phone_min-height-down
+	@media screen and (max-height: 400px)
+		@content
+
+
+$min-height_menu_menu: 970px
+=max-height
+	@media screen and (max-height: $min-height_menu_menu)
+		@content
+
+=media-w1366_h850
+	@media screen and (max-width: 1366px) and (max-height: 930px)
+		@content
+
+=media-w1024_h900
+	@media screen and (min-width: $tablet-width) and (max-height: $min-height_menu_menu)
+		@content
+
+
+=media-w1024_h1024
+	@media screen and (max-width: $laptop-width) and (max-height: $laptop-width)
+		@content
+
+
+=media-h900
+	@media screen and (max-height: 900px)
+		@content
+
+=media-w1240_h650
+  @media screen and (max-width: 1240px) and (max-height: 650px)
+    @content
+
+
+=media-w1024_h1220
+  @media screen and (max-width: 1024px) and (max-height: 1220px)
+    @content
+
+=media-w1024_h830
+	@media screen and (max-width: 1024px) and (max-height: 830px)
+		@content
+
+=media-w851_h840
+	@media screen and (max-width: 851px) and (max-height: 840px)
+		@content
+
+
+=media-w920_h820
+	@media screen and (max-width: 920px) and (max-height: 820px)
+		@content
+
+=media-w1200_h1000
+	@media screen and (max-width: 1200px) and (max-height: 1000px)
+		@content
+
+=media-w875_h1300
+	@media screen and (max-width: 875px) and (max-height: 1300px)
+		@content
+
+=media-w1024_h600
+	@media screen and (max-width: 1024px) and (max-height: 600px)
+		@content
+
+=media-w1800_h950
+	@media screen and (max-width: 1800px) and (max-height: 950px)
+		@content
+
+=media-w1024_h670
+	@media screen and (max-width: 1024px) and (max-height: 670px)
+		@content
+
+=media-h1030
+	@media screen and (max-height: 1030px)
+		@content
+
+=media-h650
+	@media screen and (max-height: 650px)
+		@content
+
+=media-w1100
+	@media screen and (max-width: 1100px)
+		@content
+
+=media-w870
+	@media screen and (max-width: 870px)
+		@content
+
+=media-h825
+	@media screen and (max-height: 825px)
+		@content
+
+=media-w568_h569
+	@media screen and (max-width: 568px) and (min-height: 569px)
+		@content
+
+=media-h950
+	@media screen and (max-height: 950px)
+		@content
+
+=scrolled($height)
+	max-height: $height
+	height: $height
+	overflow-y: scroll
+
+=retina
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-o-min-device-pixel-ratio : 1.5)
+		@content

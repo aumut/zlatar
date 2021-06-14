@@ -1,0 +1,68 @@
+.tabs
+  margin: 0
+
+  &__items
+    display: flex
+
+  &__item
+    //flex: 0 1 33.333%
+    //height: 50px
+    display: flex
+    justify-content: left
+    align-items: center
+    text-decoration: none
+
+    +tablet-down
+      display: block
+      width: 115px
+      padding: 5px
+      white-space: nowrap
+      text-align: center
+      overflow: hidden
+      font-size: 10px
+      text-overflow: ellipsis
+
+      &:nth-child(2)
+        width: 80px
+
+    &.active
+      //font-weight: bold
+      color: #FC5B1F
+      border: 1px solid #FC5B1F
+      position: relative
+      overflow: visible
+      &:after
+        content: ''
+        display: inline-block
+        width: 100%
+        height: 5px
+        background: #ffffff
+        position: absolute
+        bottom: -3px
+        left: 0
+
+  &__body
+    border-top: 1px solid #FC5B1F
+  &__block
+    position: relative
+    padding: 10px
+    font-size: 18px
+    line-height: 24px
+    display: none
+
+    h2.title
+      display: none
+    .descr__text
+      line-height: 1.2
+
+    //&:nth-child(1)
+      background: lightcoral
+
+    //&:nth-child(2)
+      background: lightsteelblue
+
+    //&:nth-child(3)
+      background: lightgreen
+
+    &.active
+      display: block

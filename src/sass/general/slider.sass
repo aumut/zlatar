@@ -1,0 +1,122 @@
+/* стили основного контейнера слайдера
+
+.slider
+  position: relative
+  //overflow: hidden
+  max-width: 440px
+  margin-left: auto
+  margin-right: auto
+
+/* стили для обёртки, в которой заключены слайды
+
+.slider__wrapper
+  position: relative
+  overflow: hidden
+  height: 100%
+
+/* стили для контейнера слайдов
+
+.slider__items
+  display: flex
+  transition: transform 0.6s ease
+  height: 100%
+
+/* стили для слайдов
+
+.slider__item
+  flex: 0 0 100%
+  max-width: 100%
+  width: 100%
+  height: auto
+  border-radius: 20px
+  overflow: hidden
+
+/* стили для кнопок "вперед" и "назад"
+
+.slider__control
+  position: absolute
+  top: 50%
+  //display: none
+  align-items: center
+  justify-content: center
+  width: 30px
+  color: #fff
+  text-align: center
+  opacity: 0.5
+  height: 30px
+  transform: translateY(-50%)
+
+.slider__control_show
+  display: flex
+
+.slider__control
+  &:hover, &:focus
+    color: #fff
+    text-decoration: none
+    outline: 0
+    opacity: 0.9
+
+.slider__control_prev
+  left: -33px
+  +tablet-down
+    left: -28px
+
+.slider__control_next
+  right: -33px
+  +tablet-down
+    right: -28px
+
+.slider__control::before
+  content: ''
+  display: inline-block
+  width: 25px
+  height: 25px
+  background: transparent no-repeat center center
+  background-size: 100% 100%
+  +tablet-down
+    width: 20px
+    height: 20px
+
+.slider__control_prev::before, .slider__control_next::before
+  background-image: url("../images/icons/ic-triangle.svg")
+
+.slider__control_prev::before
+  transform: scale(-1, 1)
+
+/* стили для индикаторов
+
+.slider__indicators
+  position: absolute
+  right: 0
+  bottom: -15px
+  left: 0
+  z-index: 2
+  display: flex
+  justify-content: center
+  padding-left: 0
+  margin: 0 auto
+  list-style: none
+
+  li
+    box-sizing: content-box
+    flex: 0 1 auto
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    margin-right: 10px
+    text-indent: -999px
+    cursor: pointer
+    background-color: $col_acsent_blur
+    background-clip: padding-box
+    &:last-child
+      margin-right: 0px
+
+    &.active, &:hover
+      background-color: $col_acsent
+
+.img-fluid
+  display: inline-block
+  width: 100%
+  height: 100%
+  max-width: 100%
+  object-fit: cover

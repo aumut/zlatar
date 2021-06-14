@@ -1,0 +1,398 @@
+*
+  &:focus, &:active
+    outline: none !important
+  box-sizing: border-box
+
+html
+  //overflow: hidden
+  font-size: $fontSize_body
+
+body
+  font:
+    family: $font_MontAlt_Light
+    size: 1rem
+    weight: 300
+  color: $col_main
+  line-height: 1.2
+  min-width: $phone-width-min
+  min-height: $phone-height
+  margin: 0
+  padding: 0
+  height: 100vh
+  background-color: $bg_body
+  overflow-y: hidden
+  +height_820
+    font-size: 14px
+  +tablet-down
+    font-size: 14px
+  +tablet-device-height
+    font-size: 13px
+  +tablet-album-device-down
+    font-size: 14px
+  +phone-down
+    font-size: 10px
+    display: contents
+
+a
+  display: inline-block
+  text-decoration: none
+  color: inherit
+  &:hover, &:active
+    text-decoration: none
+    color: inherit
+
+h1, h2, h3, h4, h5, p, ul, ol
+  margin: 0px
+  padding: 0px
+
+h2
+  font-size: $fontSize_h2
+  line-height: $lineHeight_h2
+  font-weight: normal
+  +media-w1024_h1024
+    line-height: 1.2
+  +tablet-down
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
+  +tablet-album-device-down
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
+  +tablet-device-height
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
+  +tablet-down
+    font-size: $fontSize_h2_phone
+    line-height: $lineHeight_h2_phone
+
+h3
+  font-size: $fontSize_h3
+  line-height: $lineHeight_h3
+  font-weight: normal
+  +tablet-down
+    font-size: $fontSize_h3_tablet
+  +tablet-device-height
+    font-size: $fontSize_h3_tablet
+  +tablet-album-device-down
+    font-size: $fontSize_h3_tablet
+  +tablet-down
+    font-size: $fontSize_h3_mob
+
+h4
+  font-size: $fontSize_h4
+  line-height: $lineHeight_h4
+  font-weight: normal
+
+h5
+  font-size: $fontSize_h5
+  line-height: $lineHeight_h5
+  font-weight: normal
+
+.container
+  display: flex
+  flex-direction: column
+  padding: $p_container
+  width: 100%
+  max-width: 1920px
+  height: 100vh
+  //max-height: 1160px
+  position: relative
+  +laptop-album-down
+    padding: $p_container_laptop
+  +tablet-down
+    padding: $p_container_tablet
+  +tablet-device-height
+    padding: $p_container_tablet
+  +tablet-down
+    padding: 0
+    background: $bg_menu
+
+.container_wrap
+  display: flex
+  justify-content: center
+  height: 100vh
+
+.title
+  color: $col_acsent
+  font-family: $font_MontAlt_SemiBold
+  text-align: center
+  &-main
+    position: relative
+    padding-bottom: 15px
+    margin-bottom: 30px
+    +tablet-down
+      padding-top: 12px
+      padding-bottom: 11px
+      margin-bottom: 25px
+    +tablet-down
+      padding-top: 12px
+      padding-bottom: 8px
+      margin-bottom: 15px
+    &:before, &:after
+      content: ""
+      position: absolute
+      bottom: -1px
+      width: $w_title_border
+      border-bottom: 0.3px solid $col_acsent
+      +tablet-down
+        width: $w_title_border_tablet
+      +tablet-device-height
+        width: $w_title_border_tablet
+      +tablet-down
+        width: $w_title_border_phone
+    &:before
+      left: calc(50% - calc(#{$w_title_border + 15px}))
+      +tablet-down
+        left: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-device-height
+        left: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-down
+        left: calc(50% - calc(#{$w_title_border_phone + 15px}))
+    &:after
+      right: calc(50% - calc(#{$w_title_border + 15px}))
+      +tablet-down
+        right: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-device-height
+        right: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-down
+        right: calc(50% - calc(#{$w_title_border_phone + 15px}))
+    .ic-rhomb
+      position: absolute
+      bottom: calc(-#{$h_rhomb} / 2)
+      left: calc(50% - #{$w_rhomb} / 2)
+
+.ic-rhomb
+  width: $w_rhomb
+  height: $h_rhomb
+  background: $col_acsent
+  transform: rotate(-45deg)
+  +tablet-down
+    width: $w_rhomb_tablet
+    height: $h_rhomb_tablet
+  +tablet-device-height
+    width: $w_rhomb_tablet
+    height: $h_rhomb_tablet
+  +tablet-album-device-down
+    width: $w_rhomb_tablet
+    height: $h_rhomb_tablet
+
+.link
+  display: inline-block
+  color: $col_acsent
+  font-family: $font_MontAlt_Regular
+  font-weight: normal
+  text-decoration: underline
+  &--footer
+    font-size: 23px
+    +laptop-down
+      font-size: 18px
+    +tablet-down
+      font-size: 18px
+    +tablet-device-height
+      font-size: 18px
+    +tablet-down
+      font-size: 12px
+  &:hover
+    color: $bg_menu
+    text-decoration: underline
+
+.bold-text
+  font-weight: bold
+
+.text-upper
+  text-transform: uppercase
+
+.text-center
+  text-align: center
+
+.ic
+  position: relative
+  padding-left: 30px
+  &:before
+    content: ""
+    display: inline-block
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 25px
+    height: 25px
+    background:
+      color: transparent
+      size: contain
+      position: center
+      repeat: no-repeat
+    //+media-h680
+      width: 20px
+      height: 20px
+
+.email
+  &:before
+    background-image: url("../images/icons/ic-email.svg")
+
+.phone
+  &:before
+    background-image: url("../images/icons/ic-phone.svg")
+
+.location
+  &:before
+    background-image: url("../images/icons/ic-location.svg")
+
+.web
+  &:before
+    background-image: url("../images/icons/ic-web.svg")
+
+.field
+  display: block
+  width: 100%
+  height: calc(20px + 13px*2 + 4px)
+  padding: 13px
+  font-size: 20px
+  font-weight: normal
+  line-height: 1.2
+  color: $bg_dark
+  background-color: #fff
+  background-clip: padding-box
+  border: none
+  border-radius: 10px
+  &:hover
+    border: 2px solid $col_main
+  &-err
+    border: 3px solid #A50000
+  +phone-down
+    font-size: 16px
+    padding: 7px
+    height: calc(20px + 7px*2 + 4px)
+
+.field-label
+  font-size: 20px
+  line-height: 1.2
+  font-weight: normal
+  color: #FFFFFF
+  +phone-down
+    font-size: 16px
+
+.btn
+  display: inline-block
+  font-weight: normal
+  color: #FFFFFF
+  text-align: center
+  vertical-align: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  background-color: $bg_dark
+  border: none
+  padding: 10px
+  font-size: 20px
+  line-height: 1.2
+  border-radius: 10px
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25)
+  &:active
+    box-shadow: none
+  &:hover
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25)
+    box-shadow: none
+  +phone-down
+    font-size: 16px
+
+.ic-back
+  svg
+    width: $w_ic_back
+    height: 21px
+    fill: $col_acsent
+  &:hover
+    color: $bg_menu
+    text-decoration: underline
+    svg
+      fill: $bg_menu
+
+
+ol.breadcrumbs
+  display: flex
+  list-style: none
+  align-self: flex-start
+
+.breadcrumbs
+  font-family: $font_MontAlt_Light
+  font-style: normal
+  font-weight: 300
+  font-size: 18px
+  line-height: 22px
+  width: 100%
+  text-align: left
+  color: $col_acsent
+  margin-bottom: 20px
+  +laptop-down
+    font-size: 16px
+    line-height: 1.2
+  +tablet-down
+    font-size: 14px
+  +phone-down
+    font-size: 10px
+    margin-bottom: 5px
+
+
+.wrap
+  margin: 0 auto
+  width: 90%
+  height: 90%
+  background-color: #fc5b1f
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+.item
+  display: inline-block
+  width: 40%
+  height: 30%
+  margin-right: 20px
+  margin-bottom: 20px
+  &__img
+    display: inline-block
+    height: 100%
+    width: 100%
+    img
+      width: 100%
+      height: 100%
+
+  &__title
+    background-color: yellow
+
+.flex-end
+  justify-content: flex-end!important
+  align-items: flex-end!important
+
+.scrolled
+  overflow-y: auto
+
+.scrolled::-webkit-scrollbar
+  width: 20px
+  height: 20px
+  background-color: rgba(252, 91, 31, 0.3)
+  border-radius: 20px
+  +laptop-album-down
+    width: 15px
+    height: 15px
+    border-radius: 15px
+  +laptop-down
+    width: 12px
+    height: 12px
+    border-radius: 12px
+  +tablet-down
+    width: 8px
+    height: 8px
+    border-radius: 8px
+
+.scrolled::-webkit-scrollbar-thumb
+  background-color: #FC5B1F
+  border-radius: 10px
+  +laptop-album-down
+    border-radius: 8px
+  +tablet-down
+    border-radius: 4px
+
+.scrolled
+  scrollbar-color: #FC5B1F rgba(252, 91, 31, 0.3)
+  scrollbar-width: thin
+
+.ml-sm-0
+  margin-left: 0px!important

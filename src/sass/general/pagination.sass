@@ -1,0 +1,82 @@
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-top: 20px
+  &__control
+    &::before
+      content: ''
+      display: inline-block
+      width: 25px
+      height: 25px
+      background: transparent no-repeat center center
+      background-size: 100% 100%
+      +tablet-down
+        width: 20px
+        height: 20px
+
+  &__control_prev::before, &__control_next::before
+    background-image: url("../images/icons/ic-triangle.svg")
+  &__control_prev::before
+    transform: scale(-1, 1)
+
+  a, span.active
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    color: $col_acsent
+    font-size: 20px
+    font-family: $font_MontAlt_SemiBold
+    border-right: 1px solid $col_acsent
+    width: 29px
+    height: 30px
+    margin-right: 5px
+    +tablet-down
+      height: 25px
+      width: 25px
+      font-size: 18px
+    +tablet-down
+      font-size: 12px
+      height: 20px
+      width: 20px
+    &:last-child
+      border-color: transparent
+      margin-right: 0px
+    &.pagination__control
+      padding: 0px
+      border: 0px
+    &.hidden
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      background-color: $col_acsent
+      border-right: none
+      +tablet-down
+        width: 5px
+        height: 5px
+      &>span
+        display: none
+      &+a //:nth-last-child(-n+2)
+        border-left: 1px solid $col_acsent
+    &:hover
+      color: $bg_menu
+      border-right-color: $bg_menu
+      &:nth-last-child(-n+2)
+        border-right-color: transparent
+
+      &:last-child
+        border-color: transparent
+      &:first-child
+        border-color: transparent
+  a:nth-last-child(-n+2)
+    border-right-color: transparent
+    border-left: 1px solid transparent
+  &>span.active:nth-last-child(-n+2)
+    border-right-color: transparent
+  span.active
+    color: $bg_menu
+    border-right-color: $bg_menu
+  a.pagination__control_next
+    border-left: none
+

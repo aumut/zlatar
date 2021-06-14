@@ -1,0 +1,130 @@
+.content-about
+  //background-color: yellow
+  +tablet-down
+    justify-content: center
+    align-items: center
+    display: flex
+  .content-in
+    z-index: 2
+    width: $w_content_in_about
+    max-width: calc(#{$desktop-width} / 3)
+    min-height: $h_content_in_about
+    height: auto
+    position: absolute
+    left: 50%
+    top: 0
+    margin-left: 0
+    margin-top: $left-side-rrt
+    padding: 30px 40px 40px
+    border-radius: $rad_about
+    background: $bg_body
+    border-right: 0.5px solid $bg_menu
+    +desktop
+      left: calc(#{$desktop-width} * 0.5)
+    +desktop-down
+      left: 50%
+    +laptop-down
+      width: 40%
+      left: 46%
+    +laptop-album-down
+      padding: 15px 20px 15px
+      min-height: $h_content_in_about_laptop
+      margin-top: 192px
+      width: 36%
+      left: 48%
+    +tablet-down
+      width: 45%
+      left: auto
+
+    +tablet-device-height
+      width: 41%
+      padding: 20px 15px
+      left: 45%
+      margin-top: 105px
+
+    +max-height
+      width: 45%
+      max-width: 45%
+      left: 41.7%
+      padding: 10px
+      height: 62%
+      min-height: 62%
+      // font-size: 0.9em
+
+    +tablet-down
+      min-width: 95%
+      margin-top: 55px
+      left: 3%
+      border:  0.5px solid $bg_menu
+      height: calc(100vh - 120px)
+
+    +phone-landscape-down
+      height: 70%
+      max-height: calc(100vh - 50px)
+
+    +phone_min-height-down
+      height: calc(100vh - 70px)
+
+    +phone_min-down
+      overflow-y: auto
+
+    // +phone-down
+    //   height: calc(100vh - 120px)
+
+    .content__center
+      flex-grow: unset
+      // +height_820
+      //   margin-bottom: 5px
+      p
+        margin-bottom: 10px
+        //background-color: blue
+        +laptop-down
+          //background-color: red
+          font-size: 12px
+          //background-color: red
+        +tablet-down
+          margin-bottom: 5px
+          //background-color: yellow
+        +max-height
+          margin-bottom: 3px
+          //background-color: none
+        +phone-down
+          font-size: 11px
+          margin-bottom: 0px
+
+    &:after, &:before
+      content: ""
+      position: absolute
+      top: 0px
+      right: 0px
+      width: 50%
+      //calc(100% / 2 + #{$pr_left_side})
+      height: 100%
+      +phone-down
+        content: none
+
+    &:before
+      border-top: 0.5px solid $bg_menu
+      border-top-right-radius: $rad_about
+      top: -1px
+      +media-w1024_h900
+        width: 50%
+        //calc(100% / 2 + #{$pr_left_side} + 95px)
+    &:after
+      border-bottom-right-radius: $rad_about
+      border-bottom: 0.5px solid $bg_menu
+
+
+  .title-main
+    +phone-down
+      padding: 5px 0px
+  .content__footer
+    justify-content: center
+    text-align: center
+    +desktop
+      margin-top: 0px
+    // +phone-landscape-down
+    //   margin-top: 5px
+
+  &.m-collapsed
+    display: none

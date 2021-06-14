@@ -1,0 +1,181 @@
+.content-contacts
+  +tablet-down
+    width: 100%
+
+  .ic
+    &:before
+      +laptop-down
+        width: $w_contacts_ic_laptop
+        height: $w_contacts_ic_laptop
+      +tablet-down
+        width: $w_contacts_ic_phone
+        height: $w_contacts_ic_phone
+      +media-h825
+        width: $w_contacts_ic_laptop
+        height: $w_contacts_ic_laptop
+      +phone-height-down
+        width: $w_contacts_ic_phone
+        height: $w_contacts_ic_phone
+      +phone-down
+        top: -2px
+
+  &.content.m-collapsed
+    +laptop-album-down
+      align-self: flex-start
+    +tablet-down
+      width: 100%
+
+.content-contacts.content
+  .content-wrap
+    height: 100%
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: 0.4fr 0.6fr
+    grid-gap: 50px
+    justify-items: stretch
+
+    +laptop-album-down
+      grid-gap: 20px
+
+    +laptop-down
+      grid-gap: 15px
+
+    +tablet-down
+      grid-gap: 5px
+
+    +phone_min-down
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(3, minmax(110px, auto))
+
+    +media-w568_h569
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(3, minmax(110px, auto))
+
+.address-list
+  +phone-down
+    order: -1
+    grid-row: span 2
+    font-size: 12px
+  +phone_min-down
+    grid-row: unset
+  +media-w568_h569
+    grid-row: unset
+
+.address
+  font-size: 20px
+  +laptop-album-down
+    font-size: 18px
+  +laptop-down
+    font-size: 16px
+
+  +tablet-down
+    font-size: 14px
+
+  +tablet-down
+    font-size: 12px
+  +phone-height-down
+    font-size: 12px
+
+  .title
+    color: $col_main
+    text-align: left
+    +laptop-down
+      font-size: 20px
+    +tablet-down
+      font-size: 16px
+
+    +tablet-down
+      font-size: 12px
+    +phone-height-down
+      font-size: 12px
+
+  &-list
+    list-style: none
+    &__item
+      position: relative
+      margin-bottom: 20px
+      padding-left: calc(10px + #{$w_contacts_ic})
+      display: flex
+      +laptop-down
+        flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_laptop})
+
+      +tablet-down
+        margin-bottom: 10px
+
+      +media-h825
+        margin-bottom: 8px
+        //3px
+      +tablet-down
+        margin-bottom: 5px
+        flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_phone})
+      +phone-height-down
+        margin-bottom: 5px
+        flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_phone})
+      +phone-down
+        margin-bottom: 8px
+        padding-left: calc(8px + #{$w_contacts_ic_phone})
+      +phone_min-down
+        flex-wrap: nowrap
+
+      +media-w568_h569
+        flex-wrap: nowrap
+
+      &:last-child
+        margin-bottom: 0px
+
+    span
+      &:nth-child(2)
+        margin-left: 15px
+        +laptop-down
+          margin-left: 0px
+
+
+.map-wrap
+  grid-row: span 2
+  width: 100%
+
+  +laptop-down
+    grid-row: span 1
+    height: 100%
+    object-fit: cover
+
+  +laptop_mob
+    grid-row: span 1
+    height: 100%
+    object-fit: cover
+
+.contacts-img
+  overflow: hidden
+  +laptop-down
+    grid-column: span 2
+  +phone-down
+    grid-column: span 1
+  +phone_min-down
+    height: 100%
+    width: 100%
+    text-align: center
+  +phone_min-height-down
+    height: 90px
+  +media-w568_h569
+    height: 100%
+    width: 100%
+    text-align: center
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    +phone_min-down
+      height: 100%
+      width: auto
+    +media-w568_h569
+      height: 100%
+      width: auto
+.phone-wrap
+  display: flex
+  flex-direction: column
+  .phone
+    margin-bottom: 5px

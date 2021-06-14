@@ -1,0 +1,79 @@
+
+.content-nvf
+  //+laptop-down
+    padding-top: 5px
+    padding-bottom: 10px
+  //+laptop-album-down
+    align-self: flex-start!important
+    //width: calc(100% - #{$w_nav_tablet})!important
+    //margin-left: calc(#{$w_nav_tablet})!important
+    //background-color: yellow
+  //+tablet-device-height
+    margin-left: calc(#{$w_nav_tablet})!important
+    width: calc(100% - #{$w_nav_tablet})!important
+    //background-color: green
+  //+tablet-down
+    margin-left: 0px!important
+    width: 100%
+  .slider
+    margin-bottom: 30px
+    max-width: 80%
+    height: 50%
+    +laptop-album-down
+      margin-bottom: 20px
+    +media-h1030
+      max-width: 200px
+    +media-w1100
+      max-width: 330px
+    +media-w870
+      max-width: 230px
+  .content-item--dark
+    //+laptop-album-down
+      min-height: 95%
+      padding: 8px
+    //+tablet-device-height
+      padding: 5px
+    //+height_820
+      min-height: 98%
+    //+tablet-down
+      min-height: 95%!important
+  .content-in
+    +laptop-album-down
+      padding-left: 20px
+    +tablet-down
+      padding-left: 0
+  .breadcrumbs
+    //+laptop-album-down
+      font-size: 17px
+      margin-bottom: 10px
+    //+laptop-down
+      font-size: 14px
+      margin-bottom: 5px
+  .content-item__in
+    //+laptop-down
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+    //+laptop-album-down
+      padding: 8px
+    //+tablet-device-height
+      padding: 8px
+    p
+      +laptop-album-down
+        margin-bottom: 5px
+        font-size: 14.5px
+      +tablet-device-height
+        margin-bottom: 0
+        font-size: 13px
+      +media-h650
+        font-size: 10px
+  .scrolled
+    overflow-y: hidden
+    +laptop-down
+      overflow-y: scroll
+
+  //.pagination
+    +tablet-down
+      margin-top: -50px
+
+  .content-wrap
+    grid-template-rows: repeat(2, minmax(100px, auto))

@@ -1,0 +1,46 @@
+.content-catalog
+  .content-item--catalog
+    +tablet-down
+      width: 100%
+      max-width: 310px
+    +phone-down
+      max-width: 200px
+      max-height: 130px
+  .content-item__img
+    +tablet-down
+      display: block
+  .content-item__descr
+    +laptop-down
+      font-size: 16px
+      padding: 7px 10px
+    +tablet-album-device-down
+      left: 50%
+      top: 5px
+      width: calc(50% - 5px)
+      flex-direction: column
+      justify-content: space-evenly
+      font-size: 14px
+      line-height: 17px
+    +tablet-down
+      left: 50%
+      top: 5px
+      width: calc(50% - 5px)
+      flex-direction: column
+      justify-content: space-evenly
+      font-size: 14px
+      line-height: 17px
+    +phone-down
+      font-size: 11px
+      line-height: 1.2
+      padding: 5px
+    +height_820
+      padding: 3px
+    .descr-vendorCode
+      +tablet-album-device-down
+        font-size: 12px
+        line-height: 1.2
+      +tablet-down
+        font-size: 10px
+    .descr-left div
+      +tablet-down
+        margin-bottom: 5px

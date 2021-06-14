@@ -1,0 +1,177 @@
+.content
+  flex-grow: 1
+  padding: $pt_content 0 $pb_content 20px
+  margin-left: $w_left_side_m_sm
+  +laptop-album-down
+    padding-left: $p_content_laptop
+    padding-right: $p_content_laptop
+  +laptop-down
+    padding-left: $p_content_laptop
+    padding-right: $p_content_laptop
+    margin-left: 25%
+  +tablet-down
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
+    padding-top: $pt_content_tablet
+  +tablet-device-height
+    padding-top: $pt_content_tablet
+  +tablet-album-device-down
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
+    padding-top: 10px
+  +tablet-down
+    margin-left: 0
+    margin-top: 40px
+    //margin-bottom: 40px
+    padding: 0 5px
+    background: #ffffff
+    border-radius: 10px
+
+
+  &.m-collapsed
+    margin-left: calc(#{$w_nav} + #{$p_container_laptop})
+    align-self: center
+    width: calc(100% - #{$w_nav} - #{$p_container_laptop})
+    +height_820
+      width: calc(100% - #{$w_nav} - #{$p_container_tablet})
+    +tablet-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    +tablet-device-height
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    +tablet-album-device-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      min-width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    +tablet-down
+      margin-left: 0
+      width: 100%!important
+
+
+  &.m-sm
+    margin-left: $w_left_side_m_sm
+    width: calc(100% - #{$w_left_side_m_sm})
+    +tablet-down
+      margin-left: 0
+      width: 100%
+    +tablet-device-height
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    +phone-height-down
+      margin-left: 0px
+    +phone-down
+      margin-left: 0
+      width: 100%
+  &-in
+    display: flex
+    flex-direction: column
+    height: calc(100vh - 250px)
+    &.m-sm
+      padding: 0px 40px
+    +tablet-album-device-down
+      height: calc(100vh - 180px)
+    +tablet-down
+      height: calc(100vh - 80px)
+    +phone-landscape-down
+      height: calc(100vh - 50px)
+
+  &__center
+    margin-bottom: 20px
+    +tablet-down
+      margin-bottom: 0px
+    p
+      text-align: justify
+    +phone-down
+      height: calc(100% - 95px)
+
+  &__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: auto
+    z-index: 10
+
+    +tablet-down
+      position: relative
+      z-index: 2
+      margin: auto 0px 15px
+      padding-right: 5px
+
+
+
+
+.content
+  &.content-services, &.content-maf, &.content-nvf
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 420px))
+      grid-template-rows: repeat(3, minmax(100px, 233px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 310px))
+        grid-template-rows: repeat(3, minmax(100px, 210px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 225px))
+        grid-template-rows: repeat(3, minmax(100px, 115px))
+      +tablet-device-height
+        grid-template-rows: repeat(3, minmax(35px, auto))
+
+.content
+  &.content-products
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 440px))
+      grid-template-rows: repeat(3, minmax(100px, 313px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 450px))
+        grid-template-rows: repeat(3, minmax(100px, 285px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 340px))
+        grid-template-rows: repeat(3, minmax(100px, 215px))
+      +tablet-device-height
+        grid-template-rows: repeat(3, minmax(100px, 215px))
+.content
+  &.content-catalog
+    .content-wrap
+      grid-template-columns: repeat(3, minmax(auto, 450px))
+      grid-template-rows: repeat(2, minmax(auto, 300px))
+      justify-content: center
+      +laptop-album-down
+        grid-template-columns: repeat(3, minmax(auto, 310px))
+        grid-template-rows: repeat(2, minmax(auto, 210px))
+      +laptop-down
+        grid-template-columns: repeat(3, minmax(auto, 225px))
+        grid-template-rows: repeat(2, minmax(auto, 155px))
+      +media-h950
+        grid-template-rows: repeat(2, minmax(auto, 50%))
+      +tablet-down
+        grid-template-rows: repeat(1, minmax(100px, auto))
+        grid-template-columns: repeat(2, minmax(auto, 420px))
+
+.content
+  &.content-portfolio
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 440px))
+      grid-template-rows: repeat(1, minmax(100px, 313px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 450px))
+        grid-template-rows: repeat(1, minmax(100px, 285px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 340px))
+        grid-template-rows: repeat(1, minmax(100px, 215px))
+      +tablet-device-height
+        grid-template-rows: repeat(1, minmax(100px, 215px))
+
+.content:not(.content-contacts):not(.content-portfolio-maf)
+  .content-wrap
+    height: 100%
+    display: grid
+    grid-gap: 15px
+    justify-items: center
+    justify-content: space-between
+    +tablet-down
+      height: auto!important
+      padding: 0 13%
+    +phone-down
+      padding: 0 7%
+    +phone_min-down
+      height: auto
+      grid-template-columns: 1fr !important
+      grid-template-rows: auto !important

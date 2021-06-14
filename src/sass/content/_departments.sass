@@ -1,0 +1,205 @@
+.content-depart
+  padding-left: 0
+  +phone-down
+    padding: 0 5px
+  .content__center
+    +phone-down
+      height: calc(100% - 120px)!important
+  .content-wrap
+    grid-template-columns: repeat(3, 1fr)
+    align-items: flex-start
+    +laptop-album-down
+      grid-column-gap: 5px!important
+    +laptop-down
+      display: flex!important
+      flex-direction: column!important
+      justify-content: flex-start!important
+      align-items: center!important
+      overflow-y: auto
+    +phone-down
+      max-height: 99%
+
+  .compblock, .compblock-sub
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: white
+    width: 100%
+
+  .compblock
+    width: 100%
+    border-radius: 0px 20px 0px 20px
+    +laptop-down
+      width: 80%
+      min-width: 80%
+      justify-self: center
+      margin-bottom: 20px
+    +tablet-down
+      width: 90%
+      min-width: 90%
+    +phone-down
+      border-radius: 0px 10px 0px 10px
+
+    .comblock-logo
+      width: 100%
+      justify-content: center
+      img
+        width: 100%
+        height: auto
+    .title
+      display: inline-block
+      color: white
+      padding: 10px 10px 10px 10px
+      position: relative
+      width: content
+      cursor: pointer
+      +tablet-down
+        font-size: 14px
+    .compblock-sub__descr
+      p
+        +tablet-down
+          font-size: 14px
+
+    .activity.opened, .management.opened
+      .title
+        &::after
+          position: absolute
+          content: ""
+          width: 0px
+          height: 0px
+          border-top: 8px solid transparent
+          border-right: 8px solid transparent
+          border-bottom: 8px solid white
+          border-left: 8px solid transparent
+          bottom: 15px
+          right: -20px
+          +laptop-album-down
+            right: -8px
+      .compblock-sub__descr
+        display: flex
+    .management.opened
+      .compblock-sub__descr
+        display: grid!important
+    .activity.collapsed, .management.collapsed
+      .title
+        &::after
+          position: absolute
+          content: ""
+          width: 0px
+          height: 0px
+          border-top: 8px solid white
+          border-right: 8px solid transparent
+          border-bottom: 8px solid transparent
+          border-left: 8px solid transparent
+          bottom: 8px
+          right: -20px
+          +laptop-album-down
+            right: -8px
+      .compblock-sub__descr
+        display: none
+
+  .compblock-sub.activity
+    background-color: $col_acsent
+    border-radius: 0 20px 0 0
+    +phone-down
+      border-radius: 0 10px 0 0
+    .compblock-sub__descr
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      width: 100%
+      list-style: none
+      font-size: 18px
+      line-height: 22px
+      p
+        padding: 10px
+        display: inline-block
+        width: 100%
+
+    .compblock-sub__list
+      display: inline-block
+      background-color: $bg_dark
+      width: 100%
+      padding: 10px 0
+      font-size: 18px
+      line-height: 22px
+      +tablet-down
+        font-size: 14px
+      +height_820
+        font-size: 14px
+      li
+        padding-left: 47px
+        margin-bottom: 10px
+        position: relative
+        list-style: none
+        word-break: break-word
+        +tablet-down
+          padding-left: 35px
+        +laptop-album-down
+          margin-bottom: 5px
+        +height_820
+          margin-bottom: 5px
+        &::before
+          position: absolute
+          content: ""
+          width: 0px
+          height: 0px
+          border-top: 7px solid white
+          border-right: 7px solid white
+          border-bottom: 7px solid white
+          border-left: 7px solid white
+          transform: rotate(-45deg)
+          top: 5px
+          left: 14px
+          +tablet-down
+            border-top: 5px solid white
+            border-right: 5px solid white
+            border-bottom: 5px solid white
+            border-left: 5px solid white
+          +height_820
+            border-top: 5px solid white
+            border-right: 5px solid white
+            border-bottom: 5px solid white
+            border-left: 5px solid white
+  .compblock-sub.management
+    width: 100%
+    background-color: $col_acsent
+    border-radius: 0 0 0 20px
+    +phone-down
+      border-radius: 0 0 0 10px
+    .compblock-sub__descr
+      background-color: $bg_dark
+      display: none
+      grid-template-columns: 48% 48%!important
+      grid-template-rows:  none!important
+      grid-column-gap: 10px!important
+      width: 100%
+      padding: 10px
+      border-radius: 0px 0px 0px 20px
+      font-size: 18px
+      line-height: 22px
+      +laptop-down
+        height: auto
+        min-height: auto
+      img
+        width: 100%
+        height: 200px
+        background-color: #E5E5E5
+        border-radius: 20px
+        object-fit: cover
+        +laptop-down
+          height: auto
+        +phone-down
+          border-radius: 10px
+          min-height: inherit!important
+      +phone-down
+        border-radius: 0px 0px 0px 10px
+    .compblock-sub__name
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      height: auto
+      word-break: break-word

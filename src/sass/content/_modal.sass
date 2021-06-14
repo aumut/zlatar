@@ -1,0 +1,315 @@
+.modal
+  background: $col_acsent
+  border-radius: 20px
+  padding: 20px 20px 35px
+  position: fixed
+  left: 50%
+  top: 23.5%
+  z-index: 99999
+  visibility: hidden
+  opacity: 0
+  transition: all .8s ease 0s
+  &.active
+    visibility: visible
+    opacity: 1
+    //transition: .2s visibility linear, .2s opacity linear
+
+  &-title
+    text-align: center
+    text-transform: uppercase
+    color: #FFFFFF
+    margin-bottom: 30px
+    +phone-down
+      margin-bottom: 15px
+
+  &-content
+    .field-group
+      margin-bottom: 15px
+      position: relative
+      +phone-down
+        margin-bottom: 10px
+    .field-label
+      display: inline-block
+      margin-bottom: 5px
+      padding-left: 5px
+    textarea.field
+      min-height: 110px
+
+  &-footer
+    .btn
+      width: 100%
+    .link.ic-back
+      color: #ffffff
+
+  &-msg
+    display: none
+    margin-top: -30px
+    margin-left: -18px
+    margin-right: -18px
+    width: calc( 100% + 18*2)
+    height: 30px
+    background-color: $bg_menu
+    justify-content: center
+    text-align: center
+    color: white
+    font-family: $font_MontAlt_SemiBold
+    font-style: normal
+    font-weight: 600
+    font-size: 20px
+    line-height: 24px
+
+.form-err
+  .modal-msg
+    display: block
+
+.modal-order
+  min-width: $w_modal_order
+  width: $w_modal_order
+  margin-left: calc(#{$w_modal_order} / -2)
+  top: 50%
+  margin-top: calc(617px / -2) //сделать через js
+  +phone-down
+    min-width: $w_modal_order_phone
+    max-width: $w_modal_order_phone
+    width: 95%
+    margin-left: calc(#{$w_modal_order_phone} / -2)
+    margin-top: calc(550px / -2)
+
+.modal-catalog-phone
+  min-width: $w_modal_order
+  width: $w_modal_order
+  margin-left: calc(#{$w_modal_order} / -2)
+  top: 50%
+  margin-top: calc(617px / -2)
+  +phone-down
+    min-width: $w_modal_order_phone
+    max-width: $w_modal_order_phone
+    width: 95%
+    margin-left: calc(#{$w_modal_order_phone} / -2)
+    margin-top: calc(400px / -2)
+
+.modal-catalog-phone
+  .field-group.email, .field-group.message
+    display: none
+
+body:after
+  content: ""
+  position: fixed
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  background-color: rgba(58, 58, 58, 0.6)
+  opacity: 0
+  z-index: -9999
+  transition: all .8s ease 0s
+  visibility: hidden
+
+.modal-bg
+  position: relative
+  &:after
+    opacity: 1
+    visibility: visible
+    z-index: 9999
+
+span.error-text
+  display: none
+  background: $bg_menu
+  font-size: 12px
+  color: #ffffff
+  padding: 2px 5px
+  position: absolute
+
+input.field-err + span.error-text
+  display: inline-block
+
+.modal-calculate
+  max-width: $w_modal_catolog
+  min-width: $w_modal_catolog
+  width: $w_modal_catolog
+  margin-left: calc(#{$w_modal_catolog} / -2)
+  +laptop-album-down
+    //left: 35%
+  +tablet-down
+    //left: 10%
+  +phone-down
+    top: 5%
+    min-width: $w_modal_catolog_phone
+    max-width: $w_modal_catolog_phone
+    width: 95%
+    margin-left: calc(#{$w_modal_catolog_phone} / -2)
+  .modal-title
+    text-transform: none
+    line-height: 1.23
+  .modal-content
+    padding: 0 55px
+    +phone-down
+      padding: 0 1%
+    .block-calculate.disable
+      .field-label, .field-span
+        color: rgba(255,255,255,.4)
+      .field, input[type=checkbox].field + label:after
+        border: 1px solid rgba(58, 58, 58, 0.5)
+      .select-wrapper
+        &:after
+          border-top-color: rgba(58, 58, 58, 0.5)
+
+    //input[disabled][type=checkbox].field + label:after
+      background: rgba(58, 58, 58, 0.2)
+    //input[disabled].field
+      background: rgba(58, 58, 58, 0.2)
+
+
+    hr
+      height: .3px
+      width: 100%
+      background-color: $bg_dark
+      border: 0 none
+      margin: 15px 0
+      opacity: .3
+    .field-group
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 30px
+      +phone-down
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        padding: 0
+        margin-bottom: 10px
+      .field-label
+        min-width: 120px
+        font-size: 18px
+        margin-right: 10px
+        text-align: right
+        +phone-down
+          text-align: left
+          font-size: 14px
+        &.field-label--small
+          min-width: 89px
+      .field
+        border: 1px solid transparent
+        font-size: 18px
+        padding: 10px
+        height: calc(18px + 10px*2)
+        border-radius: 5px
+        outline: none
+        min-width: 90px
+        +phone-down
+          font-size: 14px
+          padding: 5px 10px
+          height: calc(18px + 5px*2)
+      input[type=checkbox].field
+        width: 35px
+        height: 35px
+        min-width: 35px
+      .field-span
+        display: inline-block
+        font-size: 18px
+        color: #ffffff
+        margin-left: 6px
+      .error-text
+        bottom: -20px
+        left: 33%
+
+.modal-content .block-calculate
+  .field-group.colsInRow
+    .field-label
+      +phone-down
+        min-width: 60px
+        margin-bottom: 0
+    .field
+      +phone-down
+        min-width: 60px
+        max-width: 60px
+        width: 60px
+
+    +phone-down
+      flex-direction: row
+      align-items: center
+      justify-content: flex-start
+
+
+
+.select-wrapper
+  position: relative
+  display: flex
+  align-items: center
+  width: 100%
+  &::after
+    content: ''
+    display: inline-block
+    position: absolute /* Абсолютное позиционирование */
+    right: 5px
+    top: calc(50% - 5px) /* Положение треугольника */
+    border: 10px solid transparent
+    border-top-color: rgba(58, 58, 58, 1)
+
+.select-wrapper.select-wrapper--small
+  &:after
+    right: 50px
+  #thickness + label
+
+.select-dropdown
+  display: none
+  width: 100%
+  max-height: 200px
+  overflow-y: auto
+  position: absolute
+  left: 0
+  top: 100%
+  border-radius: 5px
+  background-color: #ffffff
+  list-style: none
+  z-index: 10
+  border: 1px solid transparent
+  li
+    padding: 15px 10px
+    &:hover
+      background-color: rgba(173, 216, 230, 0.3)
+    +tablet-down
+      font-size: 18px
+    +phone-down
+      font-size: 14px
+      padding: 10px
+
+
+input[type=checkbox].field, input[type=radio]
+  display: none
+
+input[type=checkbox].field + label:after
+  content: "\2714"
+  background: #ffffff
+  color: transparent
+  display: inline-block
+  //border: 1px solid transparent
+  font-size: 35px
+  font-weight: 900
+  line-height: 35px
+  margin: -5px 5px 0px 0
+  height: 35px
+  width: 35px
+  text-align: center
+  vertical-align: middle
+  transition: color ease .3s
+  position: relative
+  left: 14px
+  border-radius: 5px
+  +phone-down
+    top: 0px
+    width: 25px
+    height: 25px
+    line-height: 25px
+    font-size: 25px
+
+input[type=checkbox]:checked + label:after
+  color: $bg_dark
+
+.modal-result
+  text-align: center
+  margin-bottom: 10px
+  .result
+    font-size: 20px
+    color: #ffffff

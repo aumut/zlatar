@@ -1,0 +1,62 @@
+.footer
+  //background-color: green
+  margin-top: auto
+  .footer__contacts
+    font-size: 18px
+    display: flex
+    justify-content: flex-end
+    +laptop-down
+      font-size: 14px
+    +tablet-album-device-down
+      font-size: 14px
+      line-height: 17px
+    +tablet-down
+      font-size: 12px
+    +tablet-device-height
+      font-size: 12px
+  .location
+    width: 500px
+    +laptop-album-down
+      width: 270px
+    +tablet-down
+      width: 220px
+    +tablet-device-height
+      width: 220px
+
+    &:before
+      width: 30px
+      height: 30px
+      margin-top: 7px
+      margin-left: -7px
+      +laptop-album-down
+        margin-top: 0px
+      +tablet-down
+        width: 20px
+        height: 20px
+      +tablet-device-height
+        width: 20px
+        height: 20px
+    .span
+      display: block
+    &.ic
+      +tablet-down
+        padding-left: 15px
+
+.footer
+  +tablet-down
+    min-height: 47px
+    height: 50px
+    background: $bg_menu
+    text-align: right
+    padding: 10px 20px
+  +phone-landscape-down
+    display: none
+  .footer__contacts
+    +tablet-down
+      display: none
+  .footer__arrow-down
+    display: none
+    +tablet-down
+      display: inline-block
+    +phone-landscape-down
+      display: none

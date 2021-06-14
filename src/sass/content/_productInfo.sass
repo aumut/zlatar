@@ -1,0 +1,220 @@
+.productInfo
+  .title-main
+    +phone-landscape-down
+      padding: 5px 0
+  .info
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-bottom: 20px
+    +laptop-down
+      flex-direction: column
+    +media-w1800_h950
+      margin-bottom: 10px
+    +media-h900
+      margin-bottom: 10px
+    +tablet-album-device-down
+      margin-bottom: 30px
+      flex-direction: row
+    +media-w1240_h650
+      margin-bottom: 0px
+    //+media-w1024_h1220
+
+    +media-w1024_h1220
+      flex-direction: column
+      //margin-bottom: 10px
+      margin: 0 20px
+      //width: 60%
+      
+    //+tablet-down
+      margin-bottom: 0
+    +phone-landscape-down
+      margin: 0 20px
+      width: 35%
+      min-width: 35%
+
+  .info__slider
+    width: 40%
+    +laptop-down
+      width: 100%
+      margin-bottom: 30px
+    +media-w1024_h830
+      max-width: 440px
+    +media-w1024_h1220
+      max-width: 250px
+    +media-w1024_h600
+      margin-bottom: 20px
+    +tablet-down
+      max-width: 440px
+
+  .info__descr
+    width: 55%
+    +laptop-down
+      width: 100%
+
+
+  .cat-row
+    justify-content: center
+    align-items: flex-start
+    margin-bottom: 0
+    +media-w1024_h1220
+      flex-direction: row
+      align-items: stretch
+
+    .col
+      width: 65%
+      +laptop-down
+        width: 55%
+      +tablet-down
+        width: 68%
+      &.info__caption
+        width: 45%
+        text-align: right
+        line-height: 1.2
+        margin-right: 5px
+        +laptop-down
+          width: 40%
+          margin-right: 5px
+          font-size: 10px
+          width: 30%
+
+        &.info__caption--selfAlign
+          align-self: stretch
+          line-height: 32px
+          +laptop-device-down
+            line-height: 24px
+          +tablet-album-device-down
+            line-height: 20px
+          +media-w1024_h1220
+            line-height: 12px
+
+
+      &.info__text
+        font-family: $font_MontAlt_Medium
+        text-align: left
+        +laptop-device-down
+          font-size: 16px
+          line-height: 1.2
+        +tablet-album-device-down
+          font-size: 14px
+        +media-w1024_h1220
+          font-size: 10px
+
+  .info__text--highlight
+    font-size: 26px
+    line-height: 1.2
+    color: $col_acsent
+    +laptop-device-down
+      font-size: 20px
+    +tablet-album-device-down
+      font-size: 16px
+    +media-w1024_h1220
+      font-size: 16px
+
+  .content__center
+    .info-wrapper
+      +tablet-down
+        display: flex
+        flex-direction: column
+        min-height: 195px
+      +phone-landscape-down
+        display: flex
+        flex-direction: row
+        min-height: 195px
+      +phone_min-down
+        flex-direction: column
+    p
+      +media-w1800_h950
+        margin-bottom: 10px
+      +tablet-album-device-down
+        margin-bottom: 10px
+      +media-w1024_h1220
+        margin-bottom: 5px
+      +media-h900
+        margin-bottom: 2px
+      +tablet-device-height
+        margin-bottom: 8px
+      +media-w920_h820
+        margin-bottom: 0px
+      +media-w1240_h650
+        margin-bottom: 3px
+      +media-w1200_h1000
+        margin-bottom: 0px
+      +media-w1024_h830
+        margin-bottom: 0px
+      +media-w1024_h600
+        margin-bottom: 0px
+      +media-w875_h1300
+        margin-bottom: 0px
+
+
+  .descr
+    text-align: left
+    +media-w1366_h850
+      font-size: 14px
+    +media-w1024_h1220
+      font-size: 10px
+
+    .title
+      font-family: $font_MontAlt_Medium
+      text-align: left
+      +laptop-device-down
+        font-size: 20px
+        line-height: 1.2
+      +media-h900
+        line-height: 1.5
+      +tablet-album-device-down
+        font-size: 16px
+        line-height: 2
+      +media-w1024_h1220
+        font-size: 16px
+
+  .tabs
+    +phone_min-down
+      width: 100%
+
+  .slider__control_prev
+    +media-w1024_h1220
+      left: -28px
+
+  .slider__control_next
+    +media-w1024_h1220
+      right: -28px
+
+  .slider__control::before
+    +media-w1024_h1220
+      width: 20px
+      height: 20px
+
+  .slider
+    +tablet-device-height
+      max-width: 320px
+    +media-w1240_h650
+      max-width: 150px
+    +media-w1024_h670
+      max-width: 140px
+    +media-w851_h840
+      max-width: 135px
+  .slider__items
+    max-width: 440px
+    max-height: 250px
+    +laptop-down
+      max-height: 300px //100px
+    +media-h900
+      max-height: 150px
+    +height_820
+      max-height: 220px
+    +phone-down
+      max-height: 130px
+    +media-w1024_h600
+      max-height: 80px
+  .tabs__item
+    padding: 2px 4px
+
+.content-productInfo
+  .content__footer
+    +laptop-album-down
+      flex-direction: row
+      justify-content: space-between
+    +tablet-down
+      margin: 0 0 8px

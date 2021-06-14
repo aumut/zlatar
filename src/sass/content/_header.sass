@@ -1,0 +1,475 @@
+.header
+  &__contacts
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-left: auto
+    max-width: 430px
+    +laptop-device-down
+      flex-direction: column
+      align-items: flex-end
+    +laptop-album-down
+      flex-direction: column
+      align-items: flex-end
+    +laptop-down
+      flex-direction: column
+      align-items: flex-end
+    +tablet-album-device-down
+      flex-direction: row
+      align-items: flex-start
+      flex-wrap: wrap
+      max-width: 330px
+    +tablet-down
+      max-width: 200px
+      justify-content: flex-end
+    +tablet-down
+      justify-content: flex-end
+
+  .ic
+    margin-bottom: 4px
+    +tablet-down
+      margin-bottom: 5px
+      padding-left: 20px
+    +tablet-device-height
+      margin-bottom: 5px
+    &:before
+      width: 20px
+      height: 20px
+      +tablet-down
+        width: 15px
+        height: 15px
+  .contacts__r
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    +tablet-down
+      text-align: right
+    +tablet-device-height
+      text-align: right
+      align-items: flex-start
+      min-width: 150px
+    +tablet-album-device-down
+      min-width: 150px
+      text-align: right
+
+    .ic
+      +tablet-device-height
+        margin-bottom: 5px
+      +tablet-down
+        margin-bottom: 0px
+
+  .contacts__l
+    .ic
+      +laptop-down
+        margin-bottom: 15px
+      +tablet-device-height
+        margin-bottom: 5px
+      +tablet-down
+        margin-bottom: 0px
+
+
+.contacts
+  font-size: 20px
+  line-height: 1.2
+  font-family: $font_MontAlt_Medium
+  font-weight: 500
+  +laptop-down
+    font-size: 14px
+    line-height: 20px
+  +tablet-album-device-down
+    font-size: 14px
+    line-height: 20px
+  +tablet-down
+    font-size: 12px
+
+    //line-height: 20px
+  +tablet-device-height
+    justify-content: flex-end
+    font-size: 12px
+  +tablet-down
+    display: none
+  &__r
+    min-width: 215px
+    margin-left: 20px
+
+.left-side
+  display: block
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: $w_left_side
+  max-width: calc(#{$desktop-width} * 2/3)
+  height: 100vh
+  min-height: 500px
+  padding: $p_container $pr_left_side $pb_left_side $p_container
+  background-color: $bg_menu
+  border-radius: 0px 200px 100px 0px
+  +laptop-down
+    padding-left: $p_container_laptop
+    padding-top: $p_container_laptop
+  +tablet-down
+    padding-left: $p_container_tablet
+    padding-top: 50px
+  +tablet-device-height
+    padding-left: $p_container_tablet
+    padding-top: 50px
+    padding-bottom: 0px
+    border-radius: 0px 100px 80px 0px
+  +tablet-album-device-down
+    padding-left: $p_container_tablet
+    padding-top: 50px
+  +tablet-down
+    max-width: unset
+
+  &.m-collapsed
+    width: calc(#{$w_nav} + 30px)
+    border-radius: 0px 150px 50px 0px
+    padding-top: 45px
+    +laptop-down
+      width: calc(#{$w_nav_laptop} + 45px)
+    +tablet-album-device-down
+      width: calc(#{$w_nav_tablet} + 20px)
+      border-radius: 0px 100px 30px 0px
+      //background-color: green
+    +tablet-down
+      width: calc(#{$w_nav_tablet} + 20px)
+      border-radius: 0px 100px 30px 0px
+      //background-color: yellow
+      padding-left: 15px
+      padding-right: 15px
+    +tablet-device-height
+      width: calc(#{$w_nav_tablet} + 20px)
+      border-radius: 0px 100px 30px 0px
+    .banner
+      display: none
+
+  &.m-sm
+    width: $w_left_side_m_sm
+    padding-top: 50px
+    +tablet-device-height
+      padding-top: 30px
+
+    +tablet-device-height
+      width: calc(#{$w_nav_tablet} + 20px)
+      border-radius: 0px 100px 30px 0px
+    .nav
+      +tablet-device-height
+        padding-right: 0px
+    .banner
+      +tablet-device-height
+        display: none
+
+//.left-side.m-sm
+  +laptop-album-down
+    width: calc(#{$w_nav_laptop} + 20px)
+    border-radius: 0px 100px 30px 0px
+//.left-side.m-sm .banner
+  +laptop-album-down
+    display: none
+
+.left-side, .left-side.m-collapsed, .left-side.m-sm
+  +tablet-down
+    width: 100%
+    border-radius: 0
+    height: 40px
+    min-height: 24px
+    padding: 8px 5px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 3
+
+.nav-wrap
+  display: flex
+  margin-left: -#{$p_container}
+  height: calc(100% - #{$h_logo} - #{$mb_logo})
+  +laptop-down
+    margin-left: -#{$p_container_laptop}
+  +tablet-down
+    margin-left: -#{$p_container_tablet}
+  +tablet-device-height
+    margin-left: -#{$p_container_tablet}
+  +tablet-album-device-down
+    margin-left: -#{$p_container_tablet}
+
+  +tablet-down
+    position: fixed
+    top: 0
+    left: -100%
+    width: 100%
+    height: 98%
+    max-width: 300px
+    background-color: $bg_menu
+    padding: 0
+    transition: all 0.5s ease 0s
+    overflow: auto
+    border-bottom-right-radius: 30px
+  &.active
+    left: 0
+    padding: 30px 10px 10px 10px
+
+
+.nav
+  background-color: $bg_dark
+  color: $col_bg_dark
+  width: $w_nav
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  padding: $pt_nav $pr_nav $pt_nav $p_container
+  box-sizing: content-box
+  +laptop-down
+    width: $w_nav_laptop
+    padding-left: calc(#{$p_container_laptop} + #{$w_rhomb})
+  +tablet-device-height
+    width: $w_nav_tablet
+    padding-top: $pt_nav_tablet
+    padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+  +tablet-down
+    width: $w_nav_tablet
+    padding-top: $pt_nav_tablet
+    padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+    padding-left: calc(#{$p_container_tablet})
+  +max-height
+    padding-top: 20px
+  +tablet-album-device-down
+    width: $w_nav_tablet
+    padding-top: $pt_nav_tablet
+    padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+  +tablet-down
+    width: 90%
+    overflow: hidden
+    padding: 10px 5px 10px calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+
+
+.left-side
+  &.m-collapsed
+    .nav
+      +tablet-down
+        padding: 20px
+        padding-right: 0px
+      +tablet-device-height
+        padding-right: 0px
+      +tablet-album-device-down
+        padding-right: 0px
+
+.menu
+  list-style: none
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    top: 18px
+    left: 1px
+    height: calc(100% - 40px)
+    border-left: 0.3px dashed #FFFFFF
+  &>.menu-item
+    margin-left: 17px
+    position: relative
+    font-size: 26px
+    line-height: 1.2
+    +tablet-down
+      font-size: 20px
+    +tablet-device-height
+      font-size: 20px
+    +tablet-album-device-down
+      font-size: 20px
+    +tablet-down
+      font-size: 16px
+    &:before
+      content: ""
+      width: $w_menu_it_before
+      height: $h_menu_it_before
+      position: absolute
+      left: calc(-12px - #{$w_menu_it_before})
+      top: 13px
+      background-color: #FFFFFF
+      transform: rotate(-45deg)
+    &.active, &:active
+      &:before
+        width: calc(#{$w_menu_it_before} + 3px)
+        height: calc(#{$h_menu_it_before} + 3px)
+        left: calc(-10px - #{$w_menu_it_before} - 3px)
+
+  &>.menu-item.folded
+    .submenu
+      display: none
+
+  &>.menu-item.folded.active
+    .submenu
+      display: block
+
+  .menu-item.active, .menu-item:active, .menu-item:hover
+    &>a
+      color: $col_acsent
+
+
+  .menu-item
+    a
+      margin-top: $mt_menu_it
+      margin-bottom: $mt_menu_it
+      font-weight: 600
+
+.submenu
+  list-style: none
+  .menu-item
+    margin-left: calc( #{$w_menu_it_sub} - 10px)
+    position: relative
+    font-size: 20px
+    line-height: 1.2
+    +tablet-down
+      font-size: 16px
+    +tablet-device-height
+      font-size: 16px
+    +tablet-album-device-down
+      font-size: 16px
+    +tablet-down
+      font-size: 14px
+    &:before
+      content: ""
+      border-bottom: 0.3px dashed #FFFFFF
+      width: $w_menu_it_sub
+      position: absolute
+      left: calc(-5px - #{$w_menu_it_sub})
+      top: 15px
+
+.banner
+  flex-grow: 1
+  height: 100%
+  border-radius: 0px 200px 100px 0px
+  overflow: hidden
+  +tablet-device-height
+      border-radius: 0px 100px 80px 0px
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    +laptop-down
+      width: auto
+    +desktop-device
+      width: auto
+  +tablet-down
+    display: none
+
+.logo
+  display: flex
+  width: $w_logo
+  height: $h_logo
+  +tablet-down
+    width: $w_logo_tablet
+    height: $h_logo_tablet
+  +tablet-device-height
+    width: $w_logo_tablet
+    height: $h_logo_tablet
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+  &__img
+    width: 100%
+    height: auto
+
+.left-side
+  .logo
+    margin-bottom: $mb_logo
+    +laptop-down
+      margin-bottom: $mb_logo_laptop
+    +tablet-down
+      margin-bottom: $mb_logo_tablet
+    +tablet-device-height
+      margin-bottom: $mb_logo_tablet
+    +tablet-album-device-down
+      margin-bottom: $mb_logo_tablet
+
+    +tablet-down
+      margin-bottom: 0
+
+  &.m-collapsed, &.m-sm
+    .logo
+      width: $w_logo_collapsed
+      height: $h_logo_collapsed
+      margin-bottom: $mb_logo_collapsed
+      +tablet-down
+        margin-bottom: $mb_logo_collapsed_tablet
+        width: $w_logo_tablet
+        height: $h_logo_tablet
+      +tablet-device-height
+        margin-bottom: 20px
+        width: $w_logo_tablet
+        height: $h_logo_tablet
+      +tablet-album-device-down
+        margin-bottom: $mb_logo_collapsed_tablet
+        width: $w_logo_tablet
+        height: $h_logo_tablet
+
+      +tablet-down
+        margin-bottom: 0
+  //&.m-sm
+    .logo
+      width: $w_logo_collapsed
+      height: $h_logo_collapsed
+      margin-bottom: $mb_logo_collapsed
+
+.header__burger
+  display: none
+  +tablet-down
+    display: block
+    position: relative
+    width: 40px
+    height: 30px
+    position: relative
+    z-index: 3
+    color: #ffffff
+
+    &:before, &:after
+      content: ''
+      background-color: #fff
+      position: absolute
+      width: 100%
+      height: 3px
+      border-radius: 5px
+      left: 0
+      transition: all 0.3s ease 0s
+
+    &:before
+      top: 0
+    &:after
+      top: 16px
+      content: 'меню'
+      font-family: $font_MontAlt_Regular
+      font-size: 10px
+      line-height: 18px
+      letter-spacing: 0.34em
+
+    & span
+      position: absolute
+      background-color: #fff
+      width: 100%
+      height: 3px
+      border-radius: 5px
+      top: 8px
+      left: 0
+      transition: all 0.3s ease 0s
+
+    &.active:before
+      transform: rotate(45deg)
+      top: 8px
+      width: 55%
+
+    &.active:after
+      transform: rotate(-45deg)
+      top: 8px
+      width: 55%
+      content: ''!important
+
+
+    &.active span
+      transform: scale(0)
+
+.content__header
+  +desktop-device-height
+    margin-bottom: 30px
+
+.left-side.m-sm

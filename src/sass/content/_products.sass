@@ -1,0 +1,37 @@
+.content-products
+  .content__center.items
+    .content-item--productCat
+      .content-item__descr
+        +tablet-down
+          padding: 5px
+        .title
+          +tablet-down
+            font-size: 14px
+
+  .content-item-hover
+    +laptop-device-down
+      font-size: 18px
+      line-height: 1
+      padding: 3% 2%
+    +tablet-down
+      font-size: 15px
+      padding: 3% 9%
+    +tablet-down
+      display: none
+    .title
+      margin-bottom: 10px
+      +tablet-down
+        font-size: 15px
+        margin-bottom: 5px
+    .content-in__list li
+      margin-bottom: 2%
+
+
+.cat-row
+  display: flex
+  justify-content: center
+  margin-bottom: 21px
+  &:last-child
+    margin-bottom: 0
+  +tablet-down
+    flex-direction: column
